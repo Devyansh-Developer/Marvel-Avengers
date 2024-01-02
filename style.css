@@ -1,0 +1,507 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+font-family: 'Play', sans-serif;
+    box-sizing: border-box;
+
+
+
+}
+
+body {
+    color: white;
+    overflow-x: hidden;
+    background-color: black;
+
+}
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  overflow: hidden; 
+  opacity: 0.4;
+  background-image: url('https://bit.ly/3OtQRiX');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.5;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+/* This is Header  */
+
+header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.213);
+   
+    
+
+}
+
+
+
+nav {
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.logo {
+    display: inline-block;
+    margin-left: 10px;
+    width: 200px;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.list {
+    float: right;
+    line-height: 70px;
+}
+
+.list li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.list li a {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.list li a:hover {
+    color: red;
+    font-size: 15px;
+    text-decoration: underline;
+
+
+}
+
+ .toggleBars {
+    visibility: hidden;
+    float: right;
+    line-height: 70px;
+    color: white;
+    font-size: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+
+
+}
+
+@media (max-width: 700px) {
+
+    .toggleBars {
+       visibility: visible;
+    }
+    .logo{
+        width: 130px;
+    }
+
+    .list {
+        position: fixed;
+        margin-top: 8px;
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.12);
+border-radius: 6px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(1.8px);
+-webkit-backdrop-filter: blur(1.8px);
+border: 1px solid rgba(255, 255, 255, 0.29);
+
+
+        width: 95%;
+        height: auto;
+        display: none;
+        transition: 0.5s;
+        padding: 10px 0px;
+        top: 200px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+
+    }
+
+    .list li {
+        display: block;
+        text-align: center;
+        line-height: 50px;
+        margin-right: 0px;
+    }
+
+    .list.active {
+        display: block;
+    }
+
+    .list li a {
+        color: white;
+        font-size: 15px;
+        font-weight: 400;
+        transition: 0.5s;
+    }
+
+    .list li a:hover {
+         
+        font-size: 16px;
+        text-decoration: underline;
+    }
+
+
+
+
+}
+
+
+
+
+
+.mainSection{
+    height: 100vh;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 60px 0.8fr 1.5fr 1fr 60px;
+
+}
+.leftSection{
+    /* width:70px; */
+    height: 100%;
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.06);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.4px);
+-webkit-backdrop-filter: blur(3.4px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+     border-right: 1px solid rgba(255, 255, 255, 0.213);
+}
+.scrollDiv{
+    /* width: 150px; */
+    height: 100%;
+
+    overflow-y: scroll;
+}
+.scrollDiv::-webkit-scrollbar{
+    width: 0px;
+}
+.textDiv{
+
+    height: auto;
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.06);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.4px);
+-webkit-backdrop-filter: blur(3.4px);
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+
+}
+.imgSection{
+    /* width: 40%; */
+    height: 100%;
+
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset -11px 13px 39px -19px red;
+
+}
+.rightSection{
+    /* width: 60px; */
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.06);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.4px);
+-webkit-backdrop-filter: blur(3.4px);
+
+}
+.iconsGroup{
+    width: 100%;
+    height: 250px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    
+
+}
+.scrollIcon{
+    width: 100%;
+    height: 250px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.scrollIcon span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    background: red;
+    height: 50px;
+    cursor: pointer;
+}
+.scrollIcon h3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(90deg);
+}
+.fa-brands:hover{
+    transition: 0.5s;
+    color: red;
+}
+@media(max-width:700px){
+    .mainSection{
+        grid-template-columns: repeat(3, auto);
+        
+    }
+    .leftSection{
+        height: 40px;
+        width: 100%;
+        grid-row: 1/2;
+        grid-column: 1/-1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-right:  10px;
+         border-bottom: 1px solid rgba(255, 255, 255, 0.213);
+        
+
+
+    }
+    .scrollDiv{
+        width: 40vw;
+        height: 60vh;
+        grid-column: 3/4;
+    }
+
+    .iconsGroup, .scrollIcon{
+
+        flex-direction: row;
+        height: 40px;
+        font-size: 20px;
+       
+    }
+    .scrollIcon{
+  gap: 5px;
+    }
+
+   
+    .scrollIcon h3{
+        font-size: 15px;
+        transform: rotate(0deg);
+    }
+    .scrollIcon span{
+        height: 40px;
+        width: 40px;
+        transform: rotate(270deg);
+    }
+    .scrollIcon span:hover{
+         opacity: 0.4;
+    }
+ 
+    .imgSection{
+        width: 60vw;
+        height: 60vh;
+        grid-row: 2/3;
+        grid-column: 1/3;
+        overflow: hidden;
+         border-bottom: 1px solid rgba(255, 255, 255, 0.213);
+
+
+    }
+    .textDiv{
+        height: auto;
+        grid-row: 3/4;
+        grid-column: 1/-1;
+        padding-bottom: 70px;
+        
+    }
+    .rightSection{
+        grid-column: 1/-1 ;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 60px;
+       
+    }
+
+
+}
+
+.scrollDiv .HeroImg{
+    width: 100%;
+    height: 170px;
+    position: relative;
+opacity: 0.5;
+overflow: hidden;
+cursor: pointer;
+
+    
+}
+.scrollDiv Div span{
+    font-weight: bold;
+    margin-right: 7px;
+  }
+  .scrollDiv Div  h3{
+    /* display: none; */
+    color: white;
+    font-size: 20px;
+    position: absolute;
+   bottom:0;
+    right: 0;
+    left:0;
+    padding: 0px 5px ;
+
+
+  }
+  .scrollDiv div img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+
+
+
+  }
+  .imgSection img{
+    width: 100%;
+  object-fit: contain;
+
+  }
+
+  .textDiv h1{
+      font-size: 50px;
+
+  }
+    .textDiv p{
+      font-size: 20px;
+      opacity: 0.8;
+
+  }
+    .textDiv hr{
+        width: 20%;
+        border: 0px;
+        height: 3px;
+        margin: 10px 0px;
+        background-color: white;
+    }
+
+    
+.rightSection span{
+
+ transform: rotate(90deg);
+padding: 20px;
+white-space: nowrap;
+cursor: pointer;
+    
+}
+.rightSection span:hover{
+    transition: 0.5s;
+    background-color: red;
+}
+
+
+@media(max-width:700px){
+    .scrollDiv .HeroImg{
+    height: 100px;
+   
+}
+.hideForPhone{
+    display: none;
+    }
+.scrollDiv{
+    font-size: 15px;
+    font-weight: 120;
+}
+  .textDiv h1{
+      font-size: 40px;
+
+  }
+    .textDiv p{
+      font-size: 15px;
+
+  }
+  .rightSection{
+      flex-direction: row;
+      width: 100%;
+  }
+  .rightSection span{
+
+ transform: rotate(0deg);
+    
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
